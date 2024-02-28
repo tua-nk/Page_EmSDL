@@ -1,38 +1,29 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Emscripten-Generated Code</title>
+    <title>Web Application</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            width: 100%;
             height: 100%;
-            overflow: hidden;
+            width: 100%;
         }
 
-        .emscripten_border {
+        #canvas {
+            position: absolute;
             width: 100%;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #000;
-        }
-
-        canvas.emscripten {
-            width: 100%;
-            height: 100%;
-            background-color: #000;
         }
     </style>
 </head>
 <body>
-    <div class="emscripten_border">
-        <canvas class="emscripten" id="canvas"></canvas>
-    </div>
-    <script async src="html5_core.js"></script>
+    <canvas id="canvas"></canvas>
+    <script>
+        var Module = {
+            canvas: document.getElementById('canvas')
+        };
+    </script>
+    <script async type="text/javascript" src="html5_core.js"></script>
 </body>
 </html>
